@@ -64,5 +64,5 @@ export default function PollPage() {
      <main className="flex-1 flex justify-center px-4 mb-10">
         <PollRoom poll={poll} refreshPoll={fetchPoll} />
       </main>
-  );
+  );//h
 }
