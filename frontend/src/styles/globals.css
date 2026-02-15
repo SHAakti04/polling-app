@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌈 LIGHT THEME VARIABLES */
+:root {
+  --bg-from: #4f46e5;
+  --bg-via: #0ea5e9;
+  --bg-to: #22d3ee;
+}
+
+/* 🌙 DARK THEME VARIABLES */
+html.dark {
+  --bg-from: #020617;
+  --bg-via: #0f172a;
+  --bg-to: #020617;
+}
+
+/* PAGE BASE */
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(
+    120deg,
+    var(--bg-from),
+    var(--bg-via),
+    var(--bg-to)
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  color: white;
+  transition: background 0.4s ease;
+}
+
+/* 🌊 ANIMATED BACKGROUND */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🧊 GLASS EFFECT */
+.glass {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 🌙 DARK GLASS (OPTIONAL – BETTER CONTRAST) */
+html.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+}
