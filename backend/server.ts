@@ -18,7 +18,9 @@ import { socketHandler } from "./src/sockets/socketHandler";
 const app = express();
 
 const server = http.createServer(app);
-
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL,
